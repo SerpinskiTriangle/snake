@@ -1,13 +1,15 @@
-CC = gcc
-CFLAGS = -Wall -Wextra
-TARGET = snake
-SRCS = snake.c
+IMAGE_NAME = snake
 
-$(TARGET):$(SRCS)
-	$(CC) $(SRCS) $(CFLAGS) -o $(TARGET)
+build:
+	docker build -t $(IMAGE_NAME) .
 
-run:$(TARGET)
-	./$(TARGET)
+run:
+	docker run --rm $(IMAGE_NAME)
+
+shell:
+	docker run -it --rm $(IMAGE_NAME) bash
+
+rebuild: clean build
 
 clean:
-	rm -rf $(TARGET)
+	docker rmi -f $(IMAGE_NAME) || true
