@@ -1,9 +1,10 @@
-FROM alpine:latest
+FROM alpine:edge
 
-RUN apk update && apk add make musl-gcc musl-dev
+RUN apk update && apk add make musl-dev tcc tcc-libs-static
 
 WORKDIR /usr/src/snake
 
 COPY snake/ .
 
 CMD ["make", "run"]
+

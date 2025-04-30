@@ -9,7 +9,7 @@ run:
 shell:
 	docker run -it --rm $(IMAGE_NAME) bash
 
-rebuild: clean build
+rebuild: clean build run
 
 clean:
 	docker rmi -f $(IMAGE_NAME) || true
