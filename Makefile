@@ -7,7 +7,7 @@ run:
 	docker run --rm $(IMAGE_NAME)
 
 shell:
-	docker run -it --rm $(IMAGE_NAME) bash
+	docker run -it --rm $(IMAGE_NAME) sh
 
 rebuild: clean build run
 
