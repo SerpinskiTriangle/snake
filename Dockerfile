@@ -6,5 +6,7 @@ WORKDIR /usr/src/snake
 
 COPY snake/ .
 
-CMD ["make", "run"]
+RUN make
+
+CMD ["./snake"]
 
