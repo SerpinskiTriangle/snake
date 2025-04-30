@@ -1,10 +1,11 @@
-CC = gcc
+CC = tcc
 CFLAGS = -Wall -Wextra
+LDFLAGS = 
 TARGET = snake
 SRCS = snake.c
 
 $(TARGET):$(SRCS)
-	$(CC) $(SRCS) $(CFLAGS) -o $(TARGET)
+	$(CC) $(SRCS) $(CFLAGS) $(LDFLAGS) -o $(TARGET)
 
 run:$(TARGET)
 	./$(TARGET)
